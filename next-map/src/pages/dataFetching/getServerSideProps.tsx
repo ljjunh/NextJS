@@ -1,17 +1,17 @@
-import type { InferGetStaticPropsType, GetStaticProps } from "next";
+import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
 export default function Page({
   number,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <div>
-      <h1>getStaticProps</h1>
+      <h1>getServerSideProps</h1>
       <h2>number: {number}</h2>
     </div>
   );
 }
 
-export const getStaticProps: GetStaticProps<{
+export const getServerSideProps: GetServerSideProps<{
   number: number;
 }> = async () => {
   const num = await fetch(

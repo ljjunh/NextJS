@@ -5,7 +5,7 @@ export default function Page({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
-      <h1>getStaticProps</h1>
+      <h1>ISR</h1>
       <h2>number: {number}</h2>
     </div>
   );
@@ -18,5 +18,5 @@ export const getStaticProps: GetStaticProps<{
     "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new"
   );
   const number = await num.json();
-  return { props: { number } };
+  return { props: { number }, revalidate: 5 };
 };
