@@ -4,7 +4,7 @@ import { BookData } from "@/types";
 
 // 비동기 처리를 통해 이 함수가 실행되는 동안 다른 코드가 블로킹(해당 Promise가 해결될때까지 함수 내부에서 잠시 실행을 멈춤) 되지 않음
 export default async function fetchRandomBooks(): Promise<BookData[]> {
-  const url = `http://localhost:12345/book/random`;
+  const url = `https://onebite-books-server-main-flax.vercel.app/book/random`;
 
   try {
     // fetch함수는 Promise를 반환하고 await은 이 Promise가 해결될때까지 기다림
